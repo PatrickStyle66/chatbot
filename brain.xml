@@ -1,0 +1,81 @@
+<aiml  encoding="UTF-8">
+
+    <category>
+        <pattern>OLÁ</pattern>
+        <template>
+           <random>
+               <think><set name="user">não sei</set></think>
+               <li> olá! como vai?</li>
+               <li>olá! qual o seu nome?</li>
+           </random>
+        </template>
+    </category>
+
+    <category>
+        <pattern>*</pattern>
+        <this>olá! qual o seu nome?</this>
+        <template>
+            prazer em conhecê-lo <star/>!
+            <think><set name="user"><star/></set> </think>
+        </template>
+    </category>
+
+    <category>
+        <pattern>BEM</pattern>
+        <this>olá! como vai?</this>
+        <template>
+            que ótimo!
+        </template>
+    </category>
+
+    <category>
+        <pattern>O QUE É VOCÊ</pattern>
+        <template>
+            Eu sou um chatbot!
+        </template>
+    </category>
+
+     <category>
+        <pattern>VOCÊ SABE O QUE É *</pattern>
+        <template>
+           não, o que é <star/>?
+        </template>
+    </category>
+
+     <category>
+        <pattern>É *</pattern>
+         <this>não, o que é <star/></this>
+         <template>
+            Entendi... lembrarei disso!
+            <think><set name = "thing0"><star/></set></think>
+        </template>
+    </category>
+
+     <category>
+        <pattern>VOCÊ SABE O QUE SÃO *</pattern>
+        <template>
+           não, o que são <star/>?
+        </template>
+    </category>
+
+    <category>
+        <pattern>SÃO *</pattern>
+         <this>não, o que são <star/></this>
+         <template>
+            Entendi... lembrarei disso!
+            <think><set name = "thing1"><star/></set></think>
+        </template>
+    </category>
+
+
+    <category>
+        <pattern>O QUE É *</pattern>
+        <template>é <get name = "thing0"/></template>
+    </category>
+
+    <category>
+        <pattern>O QUE SÃO *</pattern>
+        <template>são <get name = "thing1"/></template>
+    </category>
+
+</aiml>
